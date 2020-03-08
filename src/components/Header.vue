@@ -76,7 +76,7 @@ export default {
     position: absolute;
     top: 70px;
     width: 100%;
-    z-index: 10;
+    z-index: 50;
   }
   .desktop-links {
     display: grid;

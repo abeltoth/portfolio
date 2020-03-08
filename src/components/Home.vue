@@ -1,7 +1,14 @@
 <template>
-  <div class="wrapper">
-    <div>
-      <img src="../assets//images/home.jpg" alt="background-image" class="background-image">
+  <div class="wrapper noselect">
+    <div class="particles-container">
+    <vue-particles
+      color="#f5f5f8"
+      :particleOpacity="0.5"
+      clickMode="repulse">
+    </vue-particles>
+    </div>
+    <div class="background-image-container">
+      <img src="../assets/images/home.jpg" alt="background-image" class="background-image">
     </div>
     <div class="info-container">
       <h1 class="title">Abel Toth</h1>
@@ -76,9 +83,15 @@ export default {
 </script>
 
 <style>
+  .particles-container {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: calc(100% - 70px);
+  }
   .background-image {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 70px);
     object-fit: cover;
     position: absolute;
     filter: brightness(50%);
@@ -86,8 +99,7 @@ export default {
   .info-container {
     position: relative;
     top: -25vh;
-    right: 50vw;
-    transform: translateY(50vh) translateX(50vw);
+    transform: translateY(50vh);
     text-align: center;
     display: grid;
   }
