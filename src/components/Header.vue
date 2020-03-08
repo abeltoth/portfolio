@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="home-link-container">
-      <router-link to="/" class="link-item home-link" active-class="active"><img src="../assets/logo.png" alt="logo" @click="isMenuVisible=false"></router-link>
+      <router-link to="/" class="link-item home-link" active-class="active"><img src="../assets/images/logo.png" alt="logo" @click="isMenuVisible=false"></router-link>
     </div>
     <!-- Desktop menu -->
       <div v-if="!mobileMode" class="desktop-links">
@@ -76,6 +76,7 @@ export default {
     position: absolute;
     top: 70px;
     width: 100%;
+    z-index: 10;
   }
   .desktop-links {
     display: grid;
@@ -98,7 +99,7 @@ export default {
 
   .home-link-container {
     background-color: #262626;
-    z-index: 1;
+    z-index: 100;
   }
   .home-link {
     margin-left: 17px;
@@ -112,7 +113,7 @@ export default {
     height: 100%;
     background-color: #262626;
     cursor: pointer;
-    z-index: 1;
+    z-index: 100;
     grid-column-start: 2;
   }
   .menu-icon-container:hover {
