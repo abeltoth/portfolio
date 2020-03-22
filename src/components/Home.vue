@@ -1,11 +1,11 @@
 <template>
   <div class="wrapper noselect">
     <div class="particles-container">
-    <vue-particles
-      color="#f5f5f8"
-      :particleOpacity="0.5"
-      clickMode="repulse">
-    </vue-particles>
+      <vue-particles
+        color="#f5f5f8"
+        :particleOpacity="0.5"
+        clickMode="repulse">
+      </vue-particles>
     </div>
     <div class="background-image-container">
       <img src="../assets/images/home.jpg" alt="background-image" class="background-image">
@@ -13,81 +13,82 @@
     <div class="info-container">
       <h1 class="title">Abel Toth</h1>
       <h3 class="info">{{ newText }}</h3>
+      <div class="about-btn">More about me</div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: "home",
-  data() {
-    return {
-      infoTextList: ['I am a web developer', 'This is my resume'],
-      newText: ''
-    }
-  },
-  created() {
-    this.refreshInfoText(this.infoTextList[0]);
-  },
-  methods: {
-    refreshInfoText(activeText) {
-      this.typeInfoText(activeText)
-      .then(() => {
-        this.deleteInfoText(activeText)
+  export default {
+    name: "home",
+    data() {
+      return {
+        infoTextList: ['I am a web developer', 'This is my resume'],
+        newText: ''
+      }
+    },
+    created() {
+      this.refreshInfoText(this.infoTextList[0]);
+    },
+    methods: {
+      refreshInfoText(activeText) {
+        this.typeInfoText(activeText)
         .then(() => {
-          if (activeText === this.infoTextList[0]) {
-            this.refreshInfoText(this.infoTextList[1]);
-          } else {
-            this.refreshInfoText(this.infoTextList[0]);
-          }
+          this.deleteInfoText(activeText)
+          .then(() => {
+            if (activeText === this.infoTextList[0]) {
+              this.refreshInfoText(this.infoTextList[1]);
+            } else {
+              this.refreshInfoText(this.infoTextList[0]);
+            }
+          });
         });
-      });
-    },
-    typeInfoText(infoText) {
-      return new Promise((resolve) => {
-        let length = 1;
-        const self = this;
-        const interval = setInterval(
-          function(){
-            if (length === infoText.length) {
-              clearInterval(interval)
-              setTimeout(()=> {
-                self.deleteInfoText(infoText);
-                resolve();
-              }, 2000);
-            }
-            self.newText = infoText.slice(0, length);
-            length++;
-          }, 100);
-      });
-    },
-    deleteInfoText(infoText) {
-      return new Promise((resolve) => {
-        let length = infoText.length;
-        const self = this;
-        const interval = setInterval(
-          function() {
-            if (length === 0) {
-              clearInterval(interval);
-              setTimeout(()=> {
-                resolve();
-              }, 2000);
-            }
-            self.newText = infoText.slice(0, length);
-            length--;
-          }, 50);
-      })
+      },
+      typeInfoText(infoText) {
+        return new Promise((resolve) => {
+          let length = 1;
+          const self = this;
+          const interval = setInterval(
+            function(){
+              if (length === infoText.length) {
+                clearInterval(interval)
+                setTimeout(()=> {
+                  self.deleteInfoText(infoText);
+                  resolve();
+                }, 2000);
+              }
+              self.newText = infoText.slice(0, length);
+              length++;
+            }, 100);
+        });
+      },
+      deleteInfoText(infoText) {
+        return new Promise((resolve) => {
+          let length = infoText.length;
+          const self = this;
+          const interval = setInterval(
+            function() {
+              if (length === 0) {
+                clearInterval(interval);
+                setTimeout(()=> {
+                  resolve();
+                }, 2000);
+              }
+              self.newText = infoText.slice(0, length);
+              length--;
+            }, 50);
+        })
+      }
     }
-  }
-};
+  };
 </script>
 
 <style>
-  .particles-container {
+  #particles-js {
     position: absolute;
-    z-index: 10;
-    width: 100%;
     height: calc(100% - 70px);
+    width: 100%;
+    z-index: 10;
   }
   .background-image {
     width: 100%;
@@ -102,6 +103,7 @@ export default {
     transform: translateY(50vh);
     text-align: center;
     display: grid;
+    z-index: 11;
   }
   .title {
     color: #f5f5f8;
@@ -115,6 +117,21 @@ export default {
     margin: 0 auto;
     animation:
       blink-caret .75s step-end infinite;
+  }
+  .about-btn {
+    width: 160px;
+    height: 50px;
+    margin: 100px auto 0;
+    cursor: pointer;
+    color: #f5f5f8;
+    background-color: transparent;
+    border: 2px solid #f5f5f8;
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 45px;
+  }
+  .about-btn:hover {
+    background-color: #c29800;
   }
 
   @keyframes blink-caret {

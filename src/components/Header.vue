@@ -94,7 +94,7 @@ export default {
   }
   .link-item:hover {
     text-decoration: none;
-    color: #f5f5f8;
+    color: #c29800;
   }
 
   .home-link-container {
