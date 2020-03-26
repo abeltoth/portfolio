@@ -17,7 +17,7 @@
 <style>
   @import url('https://fonts.googleapis.com/css?family=Unna&display=swap');
   body {
-    background-color: #fbfbf3;
+    background-color: #f5f5f8 !important;
     font-family: 'Unna', serif;
     font-size: 32px;
   }

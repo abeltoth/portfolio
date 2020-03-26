@@ -28,34 +28,34 @@
 </template>
 
 <script>
-export default {
-  name: "navbar",
-  data() {
-    return {
-      isMenuVisible: false,
-      mobileMode: false
-    }
-  },
-  created() {
-    window.addEventListener('resize', this.handleResize);
-    this.handleResize();
-  },
-  destroyed() {
-    window.removeEventListener('resize', this.handleResize);
-  },
-  methods: {
-    handleResize() {
-      if (window.innerWidth < 768) {
-        this.mobileMode = true;
-      } else {
-        this.mobileMode = false;
+  export default {
+    name: "navbar",
+    data() {
+      return {
+        isMenuVisible: false,
+        mobileMode: false
+      }
+    },
+    created() {
+      window.addEventListener('resize', this.handleResize);
+      this.handleResize();
+    },
+    destroyed() {
+      window.removeEventListener('resize', this.handleResize);
+    },
+    methods: {
+      handleResize() {
+        if (window.innerWidth < 768) {
+          this.mobileMode = true;
+        } else {
+          this.mobileMode = false;
+        }
       }
     }
-  }
-};
+  };
 </script>
 
-<style>
+<style scoped>
   .translateY-enter-active, .translateY-leave-active {
     transition: all 1s ease;
   }
@@ -117,7 +117,7 @@ export default {
     grid-column-start: 2;
   }
   .menu-icon-container:hover {
-    color: #f5f5f8;
+    color: #c29800;
   }
   .menu-icon {
     font-size: 36px;

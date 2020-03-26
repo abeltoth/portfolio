@@ -83,7 +83,7 @@
   };
 </script>
 
-<style>
+<style scoped>
   #particles-js {
     position: absolute;
     height: calc(100% - 70px);
