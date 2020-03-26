@@ -13,7 +13,7 @@
     <div class="info-container">
       <h1 class="title">Abel Toth</h1>
       <h3 class="info">{{ newText }}</h3>
-      <div class="about-btn">More about me</div>
+      <div class="about-btn" @click="navigateToAboutPage()">More about me</div>
     </div>
   </div>
 </template>
@@ -78,6 +78,9 @@
               length--;
             }, 50);
         })
+      },
+      navigateToAboutPage() {
+        this.$router.push('about');
       }
     }
   };
@@ -128,7 +131,7 @@
     border: 2px solid #f5f5f8;
     border-radius: 5px;
     font-size: 18px;
-    line-height: 45px;
+    line-height: 46px;
   }
   .about-btn:hover {
     background-color: #c29800;

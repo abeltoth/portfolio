@@ -15,11 +15,12 @@
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Unna&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
   body {
-    background-color: #f5f5f8 !important;
-    font-family: 'Unna', serif;
-    font-size: 32px;
+    background-color: #f5f5f8 !important; /* Needs !important because bootstrap */
+    color: #262626 !important ;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px !important;
   }
   .noselect {
     -webkit-touch-callout: none;
