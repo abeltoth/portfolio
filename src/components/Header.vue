@@ -67,6 +67,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    background-color: #262626;
   }
   .mobile-links {
     display: grid;
@@ -82,7 +83,6 @@
     display: grid;
     grid-template-columns: repeat(5, auto);
     grid-template-rows: auto;
-    background-color: #262626;
   }
   .link-item {
     color: #a0a0a0;
@@ -98,7 +98,6 @@
   }
 
   .home-link-container {
-    background-color: #262626;
     z-index: 100;
   }
   .home-link {
@@ -130,7 +129,7 @@
       grid-template-columns: repeat(5, auto);
     }
     .header {
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 1fr minmax(10px, 800px);
     }
   }
 </style>

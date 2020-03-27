@@ -55,7 +55,7 @@
   }
   .profile-img-container {
     margin: 8px auto 30px;
-    height: 300px;
+    height: 200px;
   }
   .profile-img {
     border-radius: 50%;
@@ -85,13 +85,13 @@
   .details {
     margin-bottom: 40px;
   }
-  .contact-link:hover {
+  .contact-link {
     text-decoration: underline;
     cursor: pointer;
   }
   .resume-btn {
     margin-bottom: 20px;
-    width: 160px;
+    width: 200px;
     height: 50px;
     cursor: pointer;
     color: #c29800;
@@ -108,10 +108,17 @@
     color: #f5f5f8;
   }
 
+  @media (min-width: 567px) {
+    .profile-img-container {
+      height: 300px;
+    }
+  }
+
   @media (min-width: 768px) {
     .main-area {
       grid-template-columns: 5fr 7fr;
       margin-top: 60px;
+      gap: 20px;
     }
   }
 </style>

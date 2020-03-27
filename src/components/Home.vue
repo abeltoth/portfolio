@@ -149,6 +149,9 @@
     .info {
       font-size: 42px;
     }
+    .about-btn {
+      width: 200px;
+    }
   }
   @media (min-width: 768px) {
     .title {
