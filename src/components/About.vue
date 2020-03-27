@@ -7,14 +7,28 @@
         <img src="../assets/images/profile.jpg" alt="profile-image" class="profile-img" draggable="false">
       </div>
       <div class="about">
-        <h3 class="name">Abel Toth</h3>
-        <h4 class="profession">Web developer</h4>
-        <div class="details">I am a web developer from Budapest, Hungary. I enjoy building everything from small business sites to rich interactive web apps. If you are a business seeking a web presence, or an employer looking to hire, you can get in touch with me here.</div>
+        <div class="name">Abel Toth</div>
+        <div class="profession">Web developer</div>
+        <div class="details">
+          I am a web developer from Budapest, Hungary. I enjoy building everything from small business sites to rich interactive web apps. If you are a business seeking a web presence, or an employer looking to hire, you can get in touch with me 
+          <span class="contact-link" @click="navigateToContactPage()">here.</span>
+        </div>
+        <div class="details">My expertise is in Frontend development, I build various web applications since 2016.</div>
         <div class="resume-btn">Download resume</div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    methods: {
+      navigateToContactPage() {
+        this.$router.push('contact');
+      }
+    }
+  }
+</script>
 
 <style scoped>
   .wrapper {
@@ -22,6 +36,8 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     padding: 16px;
+    max-width: 1120px;
+    margin: auto;
   }
   .title {
     margin: 20px auto;
@@ -38,21 +54,20 @@
     grid-template-rows: auto;
   }
   .profile-img-container {
-    margin: 0 auto 30px;
-    padding: 0 10%;
+    margin: 8px auto 30px;
+    height: 300px;
   }
   .profile-img {
     border-radius: 50%;
     margin: auto;
     object-fit: cover;
-    width: 100%;
     height: 100%;
     filter: grayscale(1) brightness(1);
     box-shadow: 0 0 5px;
   }
   .about {
-    margin: auto;
     display: grid;
+    grid-template-rows: repeat(4, min-content);
   }
   .name {
     margin-bottom: 10px;
@@ -68,10 +83,14 @@
     text-transform: uppercase;
   }
   .details {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+  }
+  .contact-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
   }
   .resume-btn {
-    margin: 0 auto 20px;
+    margin-bottom: 20px;
     width: 160px;
     height: 50px;
     cursor: pointer;
@@ -87,5 +106,12 @@
   .resume-btn:hover {
     background-color: #c29800;
     color: #f5f5f8;
+  }
+
+  @media (min-width: 768px) {
+    .main-area {
+      grid-template-columns: 5fr 7fr;
+      margin-top: 60px;
+    }
   }
 </style>
