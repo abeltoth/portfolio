@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper">
     <h2 class="title">About me</h2>
-    <div class="subtitle">Here is some information about me</div>
     <div class="main-area">
       <div class="profile-img-container">
         <img src="../assets/images/profile.jpg" alt="profile-image" class="profile-img" draggable="false">
@@ -44,9 +43,6 @@
     text-transform: uppercase;
     border-top: 3px solid #262626;
     border-bottom: 3px solid #c29800;;
-  }
-  .subtitle {
-    margin: 0 auto 30px;
   }
   .main-area {
     display: grid;

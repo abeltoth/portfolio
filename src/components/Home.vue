@@ -4,7 +4,8 @@
       <vue-particles
         color="#f5f5f8"
         :particleOpacity="0.5"
-        clickMode="repulse">
+        :clickEffect="false"
+        :hoverEffect="false">
       </vue-particles>
     </div>
     <div class="background-image-container">

@@ -29,5 +29,8 @@
         -moz-user-select: none;
           -ms-user-select: none;
               user-select: none;
-}
+  }
+  .no-width {
+    width: 0;
+  }
 </style>
